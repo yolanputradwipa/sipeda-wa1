@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>SIPEDA-WA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>Penilaian Keamanan Data WhatsApp</h2>
+
+<form id="formKeamanan">
+  <label>Apakah Anda mengaktifkan verifikasi dua langkah?</label><br>
+  <select id="verifikasi">
+    <option value="2">Ya</option>
+    <option value="0">Tidak</option>
+  </select><br><br>
+
+  <label>Apakah Anda sering klik link tidak dikenal?</label><br>
+  <select id="link">
+    <option value="0">Ya</option>
+    <option value="2">Tidak</option>
+  </select><br><br>
+
+  <label>Apakah Anda membagikan data pribadi di chat?</label><br>
+  <select id="data">
+    <option value="0">Sering</option>
+    <option value="1">Kadang</option>
+    <option value="2">Tidak</option>
+  </select><br><br>
+
+  <label>Apakah Anda mengunci aplikasi (PIN/Fingerprint)?</label><br>
+  <select id="kunci">
+    <option value="2">Ya</option>
+    <option value="0">Tidak</option>
+  </select><br><br>
+
+  <button type="button" onclick="hitung()">Cek Keamanan</button>
+</form>
+
+<h3 id="hasil"></h3>
+<p id="rekomendasi"></p>
+
+<script src="script.js"></script>
+</body>
+</html>
