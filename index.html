@@ -7,39 +7,54 @@
 </head>
 <body>
 
-<h2>Penilaian Keamanan Data WhatsApp</h2>
+<div class="navbar">
+  <h2>SIPEDA-WA</h2>
+</div>
 
-<form id="formKeamanan">
-  <label>Apakah Anda mengaktifkan verifikasi dua langkah?</label><br>
-  <select id="verifikasi">
-    <option value="2">Ya</option>
-    <option value="0">Tidak</option>
-  </select><br><br>
+<div class="container">
+  <p class="subtitle">Cek Keamanan Data WhatsApp Anda</p>
 
-  <label>Apakah Anda sering klik link tidak dikenal?</label><br>
-  <select id="link">
-    <option value="0">Ya</option>
-    <option value="2">Tidak</option>
-  </select><br><br>
+  <div class="card">
+    <form>
 
-  <label>Apakah Anda membagikan data pribadi di chat?</label><br>
-  <select id="data">
-    <option value="0">Sering</option>
-    <option value="1">Kadang</option>
-    <option value="2">Tidak</option>
-  </select><br><br>
+      <label>🔐 Verifikasi dua langkah</label>
+      <select id="verifikasi">
+        <option value="2">Aktif</option>
+        <option value="0">Tidak</option>
+      </select>
 
-  <label>Apakah Anda mengunci aplikasi (PIN/Fingerprint)?</label><br>
-  <select id="kunci">
-    <option value="2">Ya</option>
-    <option value="0">Tidak</option>
-  </select><br><br>
+      <label>⚠️ Klik link tidak dikenal</label>
+      <select id="link">
+        <option value="0">Sering</option>
+        <option value="2">Tidak Pernah</option>
+      </select>
 
-  <button type="button" onclick="hitung()">Cek Keamanan</button>
-</form>
+      <label>📤 Berbagi data pribadi</label>
+      <select id="data">
+        <option value="0">Sering</option>
+        <option value="1">Kadang</option>
+        <option value="2">Tidak</option>
+      </select>
 
-<h3 id="hasil"></h3>
-<p id="rekomendasi"></p>
+      <label>🔒 Kunci aplikasi</label>
+      <select id="kunci">
+        <option value="2">Aktif</option>
+        <option value="0">Tidak</option>
+      </select>
+
+      <button type="button" onclick="hitung()">Cek Sekarang</button>
+
+    </form>
+  </div>
+
+  <div class="result-card" id="resultBox">
+    <h2 id="hasil"></h2>
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
+    <p id="rekomendasi"></p>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
