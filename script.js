@@ -1,27 +1,35 @@
 function hitung() {
-  let verifikasi = parseInt(document.getElementById("verifikasi").value);
-  let link = parseInt(document.getElementById("link").value);
-  let data = parseInt(document.getElementById("data").value);
-  let kunci = parseInt(document.getElementById("kunci").value);
+  let skor =
+    parseInt(verifikasi.value) +
+    parseInt(link.value) +
+    parseInt(data.value) +
+    parseInt(kunci.value);
 
-  let skor = verifikasi + link + data + kunci;
-
+  let persen = (skor / 8) * 100;
   let hasil = "";
+  let warna = "";
   let rekomendasi = "";
 
   if (skor >= 7) {
     hasil = "Aman ✅";
-    rekomendasi = "Pertahankan kebiasaan keamanan Anda.";
-  } 
-  else if (skor >= 4) {
+    warna = "green";
+    rekomendasi = "Keamanan sangat baik!";
+  } else if (skor >= 4) {
     hasil = "Cukup ⚠️";
-    rekomendasi = "Tingkatkan keamanan dengan mengaktifkan fitur tambahan.";
-  } 
-  else {
+    warna = "orange";
+    rekomendasi = "Masih perlu ditingkatkan.";
+  } else {
     hasil = "Rentan ❌";
-    rekomendasi = "Segera aktifkan verifikasi dua langkah dan hindari link mencurigakan.";
+    warna = "red";
+    rekomendasi = "Segera perbaiki keamanan!";
   }
 
-  document.getElementById("hasil").innerHTML = "Status: " + hasil;
-  document.getElementById("rekomendasi").innerHTML = rekomendasi;
+  hasil.innerHTML = hasil;
+  rekomendasi.innerHTML = rekomendasi;
+
+  let bar = document.getElementById("progressBar");
+  bar.style.width = persen + "%";
+  bar.style.background = warna;
+
+  document.getElementById("resultBox").style.display = "block";
 }
